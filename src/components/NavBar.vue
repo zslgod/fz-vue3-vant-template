@@ -25,9 +25,7 @@ const title = computed(() => {
   return route.meta.title || ''
 })
 const isLeftArrow = computed(() => {
-  if (route.meta.level && route.meta.level !== 2)
-    return false
-  return true
+  return !(route.meta.level && route.meta.level !== 2);
 })
 </script>
 <style scoped lang="less">

@@ -20,7 +20,7 @@ const paddingTop = computed(() => {
   return route.meta.navbar ? 'var(--van-nav-bar-height)' : 0
 })
 const paddingBottom = computed(() => {
-  return route.meta.level == 1 ? 'var(--van-tabbar-height)' : 0
+  return route.meta.level === 1 ? 'var(--van-tabbar-height)' : 0
 })
 </script>
 <style scoped lang="less">
