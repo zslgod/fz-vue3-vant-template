@@ -1,20 +1,19 @@
 import { defineStore } from 'pinia'
 
-const useRouteCacheStore = defineStore('route-cache', () => {
-    const routeCaches = ref([])
 
-    const addRoute = (route) => {
-        if (routeCaches.value.includes(route.name))
-            return
-
-        if (route?.meta?.keepAlive)
-            routeCaches.value.push(route.name)
-    }
-
-    return {
-        routeCaches,
-        addRoute,
+const useRouteCacheStore = defineStore('route-cache', {
+    state: () => {
+        return {
+            routeCaches: []
+        }
+    },
+    actions: {
+        addRoute(route) {
+            if (this.routeCaches.includes(route.name))
+                return
+            if (route?.meta?.keepAlive)
+                this.routeCaches.push(route.name)
+        }
     }
 })
-
 export default useRouteCacheStore

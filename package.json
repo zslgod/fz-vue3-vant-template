@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@unhead/vue": "^1.9.7",
     "@vant/touch-emulator": "^1.4.0",
+    "@vueuse/core": "^10.9.0",
     "autoprefixer": "^10.4.19",
+    "axios": "^1.6.8",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",

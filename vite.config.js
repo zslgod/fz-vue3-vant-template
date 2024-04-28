@@ -18,6 +18,15 @@ export default defineConfig({
             resolvers: [VantResolver()],
         }),
     ],
+    server: {
+        proxy: {
+            '/api': {
+                target: '',
+                ws: false,
+                changeOrigin: true,
+            },
+        },
+    },
     resolve: {
         alias: {
             '~@': path.join(__dirname, './src'),

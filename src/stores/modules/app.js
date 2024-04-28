@@ -3,21 +3,19 @@ import {defineStore} from 'pinia'
 const prefersDark
     = window.matchMedia
     && window.matchMedia('(prefers-color-scheme: dark)').matches
+const theme = prefersDark ? 'dark' : 'light'
 
-const useAppStore = defineStore('app', () => {
-    const theme = prefersDark ? 'dark' : 'light'
-    const mode = ref(theme)
-
-    const swithMode = (val) => {
-        mode.value = val
-    }
-
-    return {
-        mode,
-        swithMode,
-    }
-}, {
+const useAppStore = defineStore('app', {
+    state: () => {
+        return{
+            mode: theme,
+        }
+    },
     persist: true,
+    actions: {
+        swithMode(val) {
+            this.mode = val
+        }
+    }
 })
-
 export default useAppStore

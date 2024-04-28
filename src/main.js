@@ -1,4 +1,5 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
+import {createHead} from '@unhead/vue'
 import '@/styles/app.less'
 import App from '@/App.vue'
 import router from '@/router'
@@ -18,7 +19,8 @@ import 'vant/es/notify/style'
 import 'vant/es/image-preview/style'
 
 const app = createApp(App)
+const head = createHead()
+app.use(head)
 app.use(router)
 app.use(pinia)
 app.mount('#app')
-//todo 接口请求封装
